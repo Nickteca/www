@@ -1,0 +1,8 @@
+com\salespointfx\www\view\SeleccionarSucursalView.class
+com\salespointfx\www\JavaFXApplication.class
+com\salespointfx\www\service\SucursalService.class
+com\salespointfx\www\model\Sucursal.class
+com\salespointfx\www\viewcontroller\SeleccionarSucursalController.class
+com\salespointfx\www\jpainterface\SucursalInterface.class
+com\salespointfx\www\component\SpringFXMLLoader.class
+com\salespointfx\www\SalespointFxNetbeans1Application.class
