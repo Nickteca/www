@@ -1,12 +1,19 @@
 package com.salespointfx.www.model;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 import jakarta.persistence.Basic;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -53,7 +60,7 @@ public class Sucursal {
     @Basic(optional = true)
     private LocalDateTime deletedAt;
 
-    /*@OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursalIdSucursal")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursalIdSucursal")
     private List<Venta> ventaList;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursalIdSucursal")
@@ -79,7 +86,7 @@ public class Sucursal {
     private List<MovimientoCaja> movimientoCajaList;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sucursalIdSucursal")
-    private List<Folio> folios;*/
+    private List<Folio> folios;
 
     public Sucursal(String nombreSucursal, String calleSucursal, String ciudadSucursal, String estadoSucursal, String telefonoSucursal, boolean estatusSucursal/*, Empresa empresaIdEmpresa*/) {
         super();
