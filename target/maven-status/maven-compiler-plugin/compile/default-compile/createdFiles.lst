@@ -16,6 +16,7 @@ com\salespointfx\www\model\GastoSucursal.class
 com\salespointfx\www\model\MovimientoDetalle.class
 com\salespointfx\www\jpainterface\SucursalInterface.class
 com\salespointfx\www\model\Movimiento.class
+com\salespointfx\www\view\AbrirCajaView.class
 com\salespointfx\www\view\SeleccionarSucursalView.class
 com\salespointfx\www\model\Categoria.class
 com\salespointfx\www\model\MovimientoCaja.class

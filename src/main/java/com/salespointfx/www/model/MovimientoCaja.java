@@ -23,41 +23,43 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(indexes = { @Index(name = "idx_fecha_movimiento", columnList = "createdAt") })
+@Table(indexes = {
+    @Index(name = "idx_fecha_movimiento", columnList = "createdAt")})
 public class MovimientoCaja {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Basic(optional = false)
-	@Column(nullable = false)
-	private Integer idMovimientoCaja;
 
-	@Basic(optional = false)
-	@Column(nullable = false, length = 1)
-	private Character tipoMovimientoCaja;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(nullable = false)
+    private Integer idMovimientoCaja;
 
-	// @Max(value=?) @Min(value=?)//if you know range of your decimal fields
-	// consider using these annotations to enforce field validation
-	@Basic(optional = false)
-	@Column(nullable = false)
-	private float saldoInicial;
+    @Basic(optional = false)
+    @Column(nullable = false, length = 1)
+    private Character tipoMovimientoCaja;
 
-	@Basic(optional = false)
-	@Column(nullable = false)
-	private LocalDateTime createdAt;
+    // @Max(value=?) @Min(value=?)//if you know range of your decimal fields
+    // consider using these annotations to enforce field validation
+    @Basic(optional = false)
+    @Column(nullable = false)
+    private float saldoInicial;
 
-	@JoinColumn(name = "sucursalIdSucursal", referencedColumnName = "idSucursal")
-	@ManyToOne(optional = false)
-	private Sucursal sucursalIdSucursal;
+    @Basic(optional = false)
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "movimientoCajaIdMovimientoCaja")
-	private List<Corte> corteList;
+    @JoinColumn(name = "sucursalIdSucursal", referencedColumnName = "idSucursal")
+    @ManyToOne(optional = false)
+    private Sucursal sucursalIdSucursal;
 
-	public MovimientoCaja(Character tipoMovimientoCaja, float saldoInicial, Sucursal sucursalIdSucursal) {
-		super();
-		this.tipoMovimientoCaja = tipoMovimientoCaja;
-		this.saldoInicial = saldoInicial;
-		this.sucursalIdSucursal = sucursalIdSucursal;
-		this.createdAt = LocalDateTime.now();
-		;
-	}
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "movimientoCajaIdMovimientoCaja")
+    private List<Corte> corteList;
+
+    public MovimientoCaja(Character tipoMovimientoCaja, float saldoInicial, Sucursal sucursalIdSucursal) {
+        super();
+        this.tipoMovimientoCaja = tipoMovimientoCaja;
+        this.saldoInicial = saldoInicial;
+        this.sucursalIdSucursal = sucursalIdSucursal;
+        this.createdAt = LocalDateTime.now();
+        ;
+    }
 }

@@ -16,15 +16,20 @@ import jakarta.persistence.OneToMany;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Sucursal {
+
     @Id
-    @GeneratedValue(strategy  = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     private Short idSucursal;
 
@@ -110,4 +115,10 @@ public class Sucursal {
         super();
         this.idSucursal = idSucursal;
     }
+
+    @Override
+    public String toString() {
+        return  idSucursal + " " + nombreSucursal + " " + calleSucursal + " " + ciudadSucursal + " " + estadoSucursal + " " + telefonoSucursal;
+    }
+    
 }

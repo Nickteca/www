@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 22
+Implementation-Title: SalespointFxNetbeans1
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: com.salespointfx.www.SalespointFxNetbeans1Application
+Created-By: Maven Integration for Eclipse
+

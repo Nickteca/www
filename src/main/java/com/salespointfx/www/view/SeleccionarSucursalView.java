@@ -39,7 +39,6 @@ public class SeleccionarSucursalView implements Initializable {
 
     public Parent load() throws IOException {
         Parent root = springFXMLLoader.load("/fxml/seleccionarsucursal.fxml").load();
-
         return root;
     }
 
